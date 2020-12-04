@@ -22,6 +22,7 @@ class FilterListWidget extends StatefulWidget {
     this.selectedTextColor = Colors.white,
     this.backgroundColor = Colors.white,
     this.allRstApplybackgroundColor = Colors.grey,
+    this.allRstApplyBorderColor = Colors.black,
     this.unselectedTextColor = Colors.black,
     this.searchFieldBackgroundColor = const Color(0xfff5f5f5),
     this.selectedTextBackgroundColor = Colors.blue,
@@ -45,6 +46,7 @@ class FilterListWidget extends StatefulWidget {
   final Color selectedTextBackgroundColor;
   final Color unselectedTextbackGroundColor;
   final Color allRstApplybackgroundColor;
+  final Color allRstApplyBorderColor;
 
   final String headlineText;
   final String searchFieldHintText;
@@ -261,6 +263,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     color: Color(0x12000000),
                   )
                 ],
+                border: Border.all(color: Colors.black)
               ),
               child: Row(
                 children: <Widget>[

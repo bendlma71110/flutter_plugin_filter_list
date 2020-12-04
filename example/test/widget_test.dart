@@ -13,7 +13,7 @@ import 'package:filter_list/filter_list.dart';
 import 'package:example/main.dart';
 
 void main() => runApp(MyApp());
-List<String> liste =  ["Eins", "Zwei", "Drei"];
+List<String> liste =  ["Einssadsd", "Zwasdasdei", "asdasd", "asdasdasd", "asldöajk"];
 
 class MyApp extends StatelessWidget {
   @override
@@ -28,16 +28,23 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FilterListWidget(
-      hideSearchField: true,
-      hideHeader: true,
-      hideSelectedTextCount: true,
-      allTextList: liste, //Liste der Filterkriterien (Maus, Monitor)
-      // backgroundColor: Colors.green,
-      // applyButonTextBackgroundColor: Colors.red,
-      // allResetButonColor: Colors.orange,
-      unselectedTextbackGroundColor: Colors.grey.withOpacity(0.6),
-      allRstApplybackgroundColor: Colors.red,
+    return Column(
+      children: [
+        SizedBox(
+          height: 100,
+          child: FilterListWidget(
+            hideSearchField: true,
+            hideHeader: true,
+            hideSelectedTextCount: true,
+            allTextList: liste, //Liste der Filterkriterien (Maus, Monitor)
+            // backgroundColor: Colors.green,
+            // applyButonTextBackgroundColor: Colors.red,
+            // allResetButonColor: Colors.orange,
+            unselectedTextbackGroundColor: Colors.grey.withOpacity(0.6),
+            allRstApplybackgroundColor: Colors.white,
+          ),
+        ),
+      ],
     );
   }
 }
