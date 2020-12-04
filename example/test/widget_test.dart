@@ -7,24 +7,37 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:filter_list/filter_list.dart';
+import 'package:filter_list/filter_list.dart';
 
 import 'package:example/main.dart';
 
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+void main() => runApp(MyApp());
+List<String> liste =  ["Eins", "Zwei", "Drei"];
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "TItle",
+      home: HomePage(),
+    );
+  }
+}
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FilterListWidget(
+      hideSearchField: true,
+      hideHeader: true,
+      hideSelectedTextCount: true,
+      allTextList: liste, //Liste der Filterkriterien (Maus, Monitor)
+      // backgroundColor: Colors.green,
+      // applyButonTextBackgroundColor: Colors.red,
+      // allResetButonColor: Colors.orange,
+      unselectedTextbackGroundColor: Colors.grey.withOpacity(0.6),
+      allRstApplybackgroundColor: Colors.red,
+    );
+  }
 }
