@@ -27,7 +27,10 @@ class FilterListWidget extends StatefulWidget {
     this.searchFieldBackgroundColor = const Color(0xfff5f5f5),
     this.selectedTextBackgroundColor = Colors.blue,
     this.unselectedTextbackGroundColor = const Color(0xfff8f8f8),
-    this.onApplyButtonClick
+    this.onApplyButtonClick,
+    this.resetBtnText = "Reset",
+    this.allBtnText = "All",
+    this.applyBtnText = "Apply"
   }) : super(key: key);
   final double height;
   final double width;
@@ -50,6 +53,9 @@ class FilterListWidget extends StatefulWidget {
 
   final String headlineText;
   final String searchFieldHintText;
+  final String resetBtnText;
+  final String allBtnText;
+  final String applyBtnText;
   final bool hideSelectedTextCount;
   final bool hideSearchField;
   final bool hidecloseIcon;
@@ -281,7 +287,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       height: double.infinity,
                       alignment: Alignment.center,
                       child: Text(
-                        'All',
+                        widget.allBtnText,
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 20, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
@@ -300,7 +306,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                       height: double.infinity,
                       alignment: Alignment.center,
                       child: Text(
-                        'Reset',
+                        widget.resetBtnText,
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 20, color: widget.allResetButonColor),
                         textAlign: TextAlign.center,
@@ -322,7 +328,7 @@ class _FilterListWidgetState extends State<FilterListWidget> {
                     },
                     child: Center(
                       child: Text(
-                        'Apply',
+                        widget.applyBtnText,
                         style: Theme.of(context).textTheme.headline.copyWith(
                             fontSize: 20, color: widget.applyButonTextColor),
                         textAlign: TextAlign.center,
